@@ -93,7 +93,7 @@ var finances = [
 
 
 // The total number of months included in the dataset.
-var totalMonths = finances.length - 1;
+var totalMonths = finances.length;
 
 // The net total amount of Profit/Losses over the entire period
 var totalProfit = 0;
@@ -107,7 +107,7 @@ for (let i = 1; i < finances.length; i++) {
     var currentMonthChange = finances[i][1] - finances[i - 1][1]
     monthToMonthChange += currentMonthChange
 }
-var averageMonthToMonthChange = monthToMonthChange / totalMonths
+var averageMonthToMonthChange = monthToMonthChange / (totalMonths - 1)
 averageMonthToMonthChange = Math.round(averageMonthToMonthChange * 100) / 100
 
 // The greatest increase in profits (date and amount) over the entire period.
